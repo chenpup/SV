@@ -73,7 +73,7 @@ PS:实数的display格式为'%e',time常量的格式为'%g'.
 - 0.01ns
 
 
-**exmaple - real literal**
+**exmaple - time literal**
 <code>
 
 	module time_literals();
@@ -98,3 +98,46 @@ simulator output:
 - @1 a=                 100
 - @2 a=                  20
 - @3 a=                  30
+
+###字符串常量（String Literals）###
+字符串常量带有引号，并且其有自己的数据形式。字符串里的字符必须处在一行内，新启一行必须在前面加上'\'。
+特殊字符必须在前面加上'\'形成转义字符。字符常量还可以转换成压缩或非压缩数组。SystemVerilog增加了下列
+特殊字符串常量。
+
+- \v 垂直制表符
+- \f 换页符（form feed）
+- \a 警铃符
+- \0x02 十六进制数据
+
+**exmaple -string literal**
+<code>
+
+	module string_literals();
+  
+  	string a;
+  
+  	initial begin
+    
+    	$display("@%gns a=%s",$time,a);
+    
+    	a="Hello Deepak";
+   	 	$display("@%gns a=%s",$time,a);
+    
+    	#1 a="Over writting old string";
+    	$display("@%gns a=%s",$time,a);
+    
+    	#1 a="This is multi line comment and this is second line";
+    	$display("@%gns a=%s",$time,a);
+    
+    	#1 $finish;
+  	end
+	endmodule
+
+</code>
+
+simulator output:
+
+- @0ns a=
+- @0ns a=Hello Deepak
+- @1ns a=Over writting old string
+- @2ns a=This is multi line comment and this is second line
