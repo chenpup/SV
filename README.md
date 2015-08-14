@@ -13,7 +13,7 @@ The example in the note could be run in EDA PlayGround:[EDA PlayGround](http://w
 
 Directory:
 
-- [Literals Value](https://github.com/chenpup/SV/blob/master/note/Literal%20Values.md)
+- [Literal Values](https://github.com/chenpup/SV/blob/master/note/Literal%20Values.md)
 
 
 
