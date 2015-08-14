@@ -1,4 +1,4 @@
-# SV
+# SystemVerilog
 SystemVerilog study
 
 Study the SystemVerlog
