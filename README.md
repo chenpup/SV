@@ -5,7 +5,7 @@ SystemVerilog study
 
 
 The based study material:
-[SystemVerilog Tutorial](http://www.asic-world.com/systemverilog/literal_values4.html#String_Literals)
+[SystemVerilog Tutorial](http://www.asic-world.com/systemverilog/tutorial.html)
 
 The example in the note could be run in EDA PlayGround:[EDA PlayGround](http://www.edaplayground.com/home)
 
@@ -14,6 +14,3 @@ The example in the note could be run in EDA PlayGround:[EDA PlayGround](http://w
 Directory:
 
 - [Literal Values](https://github.com/chenpup/SV/blob/master/note/Literal%20Values.md)
-
-
-

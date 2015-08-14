@@ -9,7 +9,7 @@ SystemVerilog 在现存的Verilog基础上增加了一些新的数值常量，�
 3. 结构体
 4. 字符串的改进
 
-###整型和逻辑常量###
+###整型和逻辑常量-（Integer and logic Literal）###
 按照2001年Verilog的规定，SystemVerilog的整型和逻辑常量可以是固也是定长度和非固定长度的。向任何变量赋常数值可以参考下列形式：
 
 '0 : Set all bits to 0
@@ -20,7 +20,7 @@ SystemVerilog 在现存的Verilog基础上增加了一些新的数值常量，�
 
 'Z or z : Set all bits to z
 
-###实数常量###
+###实数常量-(Real Literal)###
 定点格式和指数格式是实数的默认形式。我们能进行格式转换，将实数转换成短实数形式。下面列举了一些实数常量的例子：
 
 * 3.14
