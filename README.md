@@ -1,6 +1,4 @@
-# SystemVerilog Tutorial
-
-SystemVerilog study:
+# SystemVerilog Tutorial#
 
 
 
