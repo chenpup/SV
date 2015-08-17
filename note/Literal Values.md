@@ -9,7 +9,7 @@ SystemVerilog 在现存的Verilog基础上增加了一些新的数值常量，�
 3. 结构体
 4. 字符串的改进
 
-###整型和逻辑常量-（Integer and logic Literal）###
+###整型和逻辑常量-（Integer and logic Literals）###
 按照2001年Verilog的规定，SystemVerilog的整型和逻辑常量可以是固也是定长度和非固定长度的。向任何变量赋常数值可以参考下列形式：
 
 '0 : Set all bits to 0
@@ -20,7 +20,7 @@ SystemVerilog 在现存的Verilog基础上增加了一些新的数值常量，�
 
 'Z or z : Set all bits to z
 
-###实数常量-(Real Literal)###
+###实数常量-(Real Literals)###
 定点格式和指数格式是实数的默认形式。我们能进行格式转换，将实数转换成短实数形式。下面列举了一些实数常量的例子：
 
 * 3.14
@@ -141,3 +141,36 @@ simulator output:
 - @0ns a=Hello Deepak
 - @1ns a=Over writting old string
 - @2ns a=This is multi line comment and this is second line
+
+###数组常量-（Array Literals）###
+SystemVerilog除了复制操作符（'{}'），其在语法上与C语言相同。其嵌套的大括号跟随在维数后。
+
+**exmaple -Array literals**
+<code>
+
+ 	module array_literals ();
+  
+   		byte a [0:1][0:2] = '{'{0,1,2},'{3{8'hex5}}};
+
+		initial begin
+ 	   		$display ("a [0][0] = %d", a[0][0]);
+       		$display ("a [0][1] = %d", a[0][1]);
+       		$display ("a [0][2] = %d", a[0][2]);
+       		$display ("a [1][0] = %d", a[1][0]);
+       		$display ("a [1][1] = %d", a[1][1]);
+ 	   		$display ("a [1][2] = %d", a[1][2]);
+	   		#1  $finish;
+ 		end
+    endmodule
+
+</code>
+simulator output:
+
+- a [0][0] =           0
+- a [0][1] =           1
+- a [0][2] =           2
+- a [1][0] =           5
+- a [1][1] =           5
+- a [1][2] =           5
+
+###结构体-（Structure Literals）###

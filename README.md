@@ -1,6 +1,6 @@
 # SystemVerilog Tutorial
 
-SystemVerilog study
+SystemVerilog study:
 
 
 
