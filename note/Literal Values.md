@@ -1,6 +1,5 @@
 ##Literal Values##
 [本章的链接-Literal Value](http://www.asic-world.com/systemverilog/literal_values1.html#Integer_and_Logic_Literals)
-
 ###介绍###
 SystemVerilog 在现存的Verilog基础上增加了一些新的数值常量，并且对一些常量进行了修改。
 
@@ -172,5 +171,46 @@ simulator output:
 - a [1][0] =           5
 - a [1][1] =           5
 - a [1][2] =           5
-
 ###结构体-（Structure Literals）###
+结构体在语法上与C语言相同。
+
+**example - Structure Literals**
+
+    typedef struct{
+    	byte a;
+      	reg b;
+      	shortint unsigned c;
+    }myStruct;
+    
+    module struct_literals();
+      
+      myStruct object='{10,0,100};
+      myStruct objectArray [0:1]='{'{10,0,100},'{11,1,101}};
+      
+      initial begin
+	    $display("a=%b b=%b c=%h",object.a,object.b,object.c);
+	    object.a=15;
+	    $display("a=%b b=%b c=%h",object.a,object.b,object.c);
+	    object.c=16'hdead;
+	    $display("a=%b b=%b c=%h",object.a,object.b,object.c.toupper);
+	    
+	    $display("Printing array of objects");
+	    $display("a=%b b=%b c=%h",objectArray[0].a,objectArray[0].b,objectArray[0].c);
+	    $display("a=%b b=%b c=%h",objectArray[1].a,objectArray[1].b,objectArray[1].c);
+    
+    	#1 $finish;
+      end
+    endmodule
+simulator output:
+
+- a=00001010 b=0 c=0064
+- a=00001111 b=0 c=0064
+- a=00001111 b=0 c=dead
+- Printing array of objects
+- a=00001010 b=0 c=0064
+- a=00001011 b=1 c=0065
+
+$finish called from file "testbench.sv", line 25.
+
+
+
